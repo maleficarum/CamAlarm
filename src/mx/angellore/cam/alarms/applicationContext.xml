@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+	"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor" />
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+
+	<bean id="memcached" class="com.solab.alarms.AlarmMemcachedClient">
+		<property name="servers">
+			<list>
+				<value>127.0.0.1</value>
+			</list>
+		</property>
+	</bean>
+	<bean id="gtalkChannel" class="mx.angellore.cam.alarms.channel.GtalkChannel">
+		<constructor-arg index="0">
+			<value></value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value></value>
+		</constructor-arg>
+		<constructor-arg index="2">
+			<list>
+				<value></value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="twitterChannel" class="com.solab.alarms.channels.twitter.TwitterChannel">
+	    <property name="accessToken" value="344432804-2GM7PBouXU3NY9l82MXoGiuw8eT4OWyftzjpOiZr" />
+	    <property name="tokenSecret" value="uageuzzOkbKGgmWigOAYIZkiscZHdt3zb8EirR3Aw" />
+	</bean>	
+	
+	<bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
+		<constructor-arg index="0">
+			<value>asterisk.call</value>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<value>/var/spool/asterisk/outgoing/</value>
+		</constructor-arg>
+	</bean>	
+	
+	<bean id="alarmSender" class="com.solab.alarms.AlarmSender">
+         <property name="alarmChannels"><list>
+                <ref local="gtalkChannel" />
+                <ref local="twitterChannel" />
+        </list></property>
+        <property name="alarmCache">
+        	<ref local="memcached" />
+        </property>
+	</bean>
+
+</beans>

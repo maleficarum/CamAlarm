@@ -1,0 +1,40 @@
+apply plugin:'java'
+apply plugin:'eclipse'
+defaultTasks 'build'
+version='2.0'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	mavenRepo name:'Spy Repository', urls:'http://bleu.west.spy.net/~dustin/m2repo'
+}
+
+dependencies {
+	compile 'org.slf4j:slf4j-api:1.6.1',
+		'commons-io:commons-io:2.0.1', 
+		'org.springframework:spring-asm:3.0.5.RELEASE',
+		'org.springframework:spring-beans:3.0.5.RELEASE',
+		'org.springframework:spring-context:3.0.5.RELEASE',
+		'org.springframework:spring-context-support:3.0.5.RELEASE',
+		'org.springframework:spring-core:3.0.5.RELEASE',
+		'org.springframework:spring-expression:3.0.5.RELEASE',
+		'jivesoftware:smackx:3.1.0',
+		'net.sf.jalarms:jalarms-core:1.5.2','net.sf.jalarms:jalarms-channels:1.5.2',
+		'spy:memcached:2.5'
+}
+
+eclipseClasspath {
+	downloadSources = false;
+}
+
+sourceSets {
+	main {
+		java {
+			srcDir 'src'
+		}
+		resources {
+			srcDir 'src'
+		}
+	}
+}
+libsDirName='../../jars'
