@@ -3,6 +3,8 @@
  */
 package mx.angellore.cam.alarms.commands;
 
+import java.util.List;
+
 /**
  * 
  * @author Oscar Ivan Hernandez Ventura [ oscar at angellore dot mx]
@@ -11,6 +13,6 @@ package mx.angellore.cam.alarms.commands;
  */
 public interface ICommand {
 	
-	public String execute(Object...args);
+	public List<String> execute(Object...args);
 
 }

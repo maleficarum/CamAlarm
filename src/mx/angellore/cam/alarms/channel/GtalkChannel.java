@@ -43,8 +43,6 @@ public class GtalkChannel implements AlarmChannel, MessageListener {
 			connection.connect();			
 			connection.login(u, p);
 			
-			
-			
 			connection.getChatManager().addChatListener(
 				    new ChatManagerListener() {
 				        public void chatCreated(Chat chat, boolean createdLocally) {
@@ -79,12 +77,16 @@ public class GtalkChannel implements AlarmChannel, MessageListener {
 		if(arg1.getBody() == null) {
 			return ;
 		}
-		ICommand command = commands == null ? null : commands.get(arg1.getBody());
+		ICommand command = commands == null ? null : commands.get(arg1.getBody().toUpperCase());
 		try {
 			if(command != null) {
 
-				String r = command.execute(new Object[] {});
-				arg0.sendMessage(r);
+				List<String> r = command.execute(new Object[] {});
+				if(r != null) {
+					for(String rr : r) {
+						arg0.sendMessage(rr);
+					}
+				}
 
 			} else {
 				arg0.sendMessage("No existe comando " + arg1.getBody());
