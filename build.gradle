@@ -38,4 +38,4 @@ sourceSets {
 		}
 	}
 }
-libsDirName='../../jars'
+libsDirName='lib'
