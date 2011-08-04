@@ -39,7 +39,7 @@ public class AsteriskChannel implements AlarmChannel {
         originateAction.setContext("default");
         originateAction.setExten("1300");
         originateAction.setPriority(new Integer(1));
-        originateAction.setTimeout(new Integer(30000));
+        originateAction.setTimeout(3000l);
 
         // connect to Asterisk and log in
         try {
