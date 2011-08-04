@@ -31,14 +31,14 @@
 	    <property name="tokenSecret" value="uageuzzOkbKGgmWigOAYIZkiscZHdt3zb8EirR3Aw" />
 	</bean>	
 	
-	<bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
+	<!--bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
 		<constructor-arg index="0">
 			<value>asterisk.call</value>
 		</constructor-arg>
 		<constructor-arg index="1">
 			<value>/var/spool/asterisk/outgoing/</value>
 		</constructor-arg>
-	</bean>	
+	</bean-->	
 	
 	<bean id="alarmSender" class="com.solab.alarms.AlarmSender">
          <property name="alarmChannels"><list>
@@ -48,6 +48,16 @@
         <property name="alarmCache">
         	<ref local="memcached" />
         </property>
+	</bean>
+	
+	<bean id="commands" class="java.util.HashMap">
+		<constructor-arg>
+			<map>
+			 	<entry key="IP">
+			 		<bean class="mx.angellore.cam.alarms.commands.impl.GetIP" />
+			 	</entry>
+			</map>
+		</constructor-arg>
 	</bean>
 
 </beans>
