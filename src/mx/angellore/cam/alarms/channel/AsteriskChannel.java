@@ -4,13 +4,13 @@
 package mx.angellore.cam.alarms.channel;
 
 import java.io.IOException;
+import java.util.Map;
 
 import org.asteriskjava.manager.AuthenticationFailedException;
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.ManagerConnectionFactory;
 import org.asteriskjava.manager.TimeoutException;
 import org.asteriskjava.manager.action.OriginateAction;
-import org.asteriskjava.manager.response.ManagerResponse;
 
 import com.solab.alarms.AlarmChannel;
 
@@ -21,6 +21,7 @@ import com.solab.alarms.AlarmChannel;
 public class AsteriskChannel implements AlarmChannel {
 	
 	private ManagerConnection managerConnection;
+	private Map<String, String> config;
 
 	public AsteriskChannel(String h, String m, String p) {
 		ManagerConnectionFactory factory = new ManagerConnectionFactory(h,m,p);
@@ -33,20 +34,18 @@ public class AsteriskChannel implements AlarmChannel {
 
 	public void send(String arg0, String arg1) {
 		OriginateAction originateAction = new OriginateAction();
-        ManagerResponse originateResponse = null;
 
-        originateAction.setChannel("SIP/John");
-        originateAction.setContext("default");
-        originateAction.setExten("1300");
+        originateAction.setChannel(config.get("CHANNEL"));
+        originateAction.setContext(config.get("CONTEXT"));
+        originateAction.setExten(config.get("EXTENSION"));
         originateAction.setPriority(new Integer(1));
-        originateAction.setTimeout(3000l);
+        originateAction.setTimeout(10000l);
+        originateAction.setCallerId(config.get("CALLERID"));
 
         // connect to Asterisk and log in
         try {
 			managerConnection.login();
-	        originateResponse = managerConnection.sendAction(originateAction, 30000);
-	        
-			System.out.println(originateResponse.getResponse());
+	        managerConnection.sendAction(originateAction, 30000);
 	        managerConnection.logoff();			        
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
@@ -61,7 +60,11 @@ public class AsteriskChannel implements AlarmChannel {
 	}
 
 	public void shutdown() {
-		//Do nothing
+
+	}
+	
+	public void setConfig(Map<String, String> config) {
+		this.config = config;
 	}
 
 }

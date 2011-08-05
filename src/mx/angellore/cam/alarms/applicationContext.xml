@@ -15,35 +15,56 @@
 	</bean>
 	<bean id="gtalkChannel" class="mx.angellore.cam.alarms.channel.GtalkChannel">
 		<constructor-arg index="0">
-			<value></value>
+			<value>camserverd@</value>
 		</constructor-arg>
 		<constructor-arg index="1">
 			<value></value>
 		</constructor-arg>
 		<constructor-arg index="2">
 			<list>
-				<value></value>
+				<value>@</value>
+				<value>@</value>
 			</list>
 		</constructor-arg>
 	</bean>
 	<bean id="twitterChannel" class="com.solab.alarms.channels.twitter.TwitterChannel">
-	    <property name="accessToken" value="344432804-2GM7PBouXU3NY9l82MXoGiuw8eT4OWyftzjpOiZr" />
-	    <property name="tokenSecret" value="uageuzzOkbKGgmWigOAYIZkiscZHdt3zb8EirR3Aw" />
+	    <property name="accessToken" value="" />
+	    <property name="tokenSecret" value="" />
 	</bean>	
 	
-	<!--bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
+	<bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
 		<constructor-arg index="0">
-			<value>asterisk.call</value>
+			<value>localhost</value>
 		</constructor-arg>
 		<constructor-arg index="1">
-			<value>/var/spool/asterisk/outgoing/</value>
+			<value>manager</value>
 		</constructor-arg>
-	</bean-->	
+		<constructor-arg index="2">
+			<value>pa55w0rd</value>
+		</constructor-arg>
+		<property name="config">
+			<map>
+				<entry key="CHANNEL">
+					<value>SIP/</value>
+				</entry>
+				<entry key="CONTEXT">
+					<value></value>
+				</entry>
+				<entry key="EXTENSION">
+					<value>666</value>
+				</entry>
+				<entry key="CALLERID">
+					<value>Urgent</value>
+				</entry>
+			</map>
+		</property>
+	</bean>	
 	
 	<bean id="alarmSender" class="com.solab.alarms.AlarmSender">
          <property name="alarmChannels"><list>
                 <ref local="gtalkChannel" />
                 <ref local="twitterChannel" />
+                <ref local="asteriskChannel" />
         </list></property>
         <property name="alarmCache">
         	<ref local="memcached" />
@@ -55,6 +76,9 @@
 			<map>
 			 	<entry key="IP">
 			 		<bean class="mx.angellore.cam.alarms.commands.impl.GetIP" />
+			 	</entry>
+			 	<entry key="CAMS">
+			 		<bean class="mx.angellore.cam.alarms.commands.impl.GetCamUrls" />
 			 	</entry>
 			</map>
 		</constructor-arg>
