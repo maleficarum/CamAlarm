@@ -4,17 +4,12 @@
 package mx.angellore.cam.alarms;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.Reader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -34,11 +29,10 @@ public class Main {
 	private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 	private String hostname;
 
-	public Main() {
+	public Main(String h) {
 		ctx = new ClassPathXmlApplicationContext("mx/angellore/cam/alarms/applicationContext.xml");
 		sender = (AlarmSender) ctx.getBean("alarmSender");
-
-
+		hostname = h;
 	}
 
 	public void start() {
@@ -72,8 +66,10 @@ public class Main {
 				BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
 				String cmd = in.readLine();
 
+				System.out.println("CMD " + cmd);
+				
 				sender.sendAlarm(hostname,cmd);
-
+				System.out.println("CMD " + cmd);
 				cmd = null;
 				in.close();
 			} catch (IOException e) {
@@ -83,7 +79,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		new Main();
+		new Main("").start();
 	}
 
 }
