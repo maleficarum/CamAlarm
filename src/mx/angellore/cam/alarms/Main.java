@@ -24,6 +24,7 @@ import com.solab.alarms.AlarmSender;
  */
 public class Main {
 
+	private static final byte[] RESPONSE = "HTTP/1.1 200 OK\r\nContent-Length: 4\r\nConnection: close\r\nContent-Type: text/plain\r\n\r\nDONE".getBytes();
 	private ApplicationContext ctx = null;
 	private AlarmSender sender = null;
 	private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
@@ -63,15 +64,43 @@ public class Main {
 		public void run() {
 
 			try {
-				BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
-				String cmd = in.readLine();
-
-				System.out.println("CMD " + cmd);
+				BufferedReader reader = new BufferedReader(new InputStreamReader(s.getInputStream()));
 				
-				sender.sendAlarm(hostname,cmd);
-				System.out.println("CMD " + cmd);
-				cmd = null;
-				in.close();
+                String linea = reader.readLine();
+                
+                if (linea.startsWith("POST")) {
+                        int largo = 0;
+                        while (linea.length() > 0) {
+                                linea = reader.readLine();
+                                if (linea.startsWith("Content-Length: ")) {
+                                        largo = Integer.parseInt(linea.substring(16));
+                                }
+                        }
+                        if (largo > 0) {
+                                char[] buf = new char[largo];
+                                reader.read(buf);
+                                linea = new String(buf);
+                        } else {
+                                linea = reader.readLine();
+                        }
+                } else if (linea.startsWith("GET")) {
+                        int pos = linea.indexOf('?');
+                        int p2 = linea.lastIndexOf(" HTTP/");
+                        if (pos > 0 && p2 > 20) {
+                                linea = linea.substring(pos + 1, p2);
+                        } else {
+                                linea = null;
+                        }
+                } else {
+                        linea = null;
+                }
+
+                s.getOutputStream().write(RESPONSE);
+                s.getOutputStream().flush();
+                s.close();		
+                
+                sender.sendAlarm(hostname, linea);
+				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}		

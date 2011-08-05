@@ -4,28 +4,28 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER" exported="true"/>
 	<classpathentry kind="output" path="bin"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-asm/jars/spring-asm-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/net.sf.jalarms/jalarms-core/jars/jalarms-core-1.5.2.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/commons-logging/commons-logging/jars/commons-logging-1.1.1.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-core/jars/spring-core-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-context-support/jars/spring-context-support-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/com.sun.jmx/jmxri/jars/jmxri-1.2.1.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/log4j/log4j/jars/log4j-1.2.15.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-context/jars/spring-context-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/javax.mail/mail/jars/mail-1.4.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.slf4j/slf4j-api/jars/slf4j-api-1.6.1.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/spy/memcached/jars/memcached-2.5.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/jivesoftware/smack/jars/smack-3.1.0.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.asteriskjava/asterisk-java/jars/asterisk-java-1.0.0.M3.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsendnsca-core/bundles/org.apache.servicemix.bundles.jsendnsca-core-1.3.1_2.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-aop/jars/spring-aop-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/javax.activation/activation/jars/activation-1.1.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/net.sf.jalarms/jalarms-channels/jars/jalarms-channels-1.5.2.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/jivesoftware/smackx/jars/smackx-3.1.0.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/aopalliance/aopalliance/jars/aopalliance-1.0.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/commons-io/commons-io/jars/commons-io-2.0.1.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-beans/jars/spring-beans-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/org.springframework/spring-expression/jars/spring-expression-3.0.5.RELEASE.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/com.sun.jdmk/jmxtools/jars/jmxtools-1.2.1.jar" exported="true"/>
-	<classpathentry kind="lib" path="/Users/angellore/.gradle/cache/javax.jms/jms/jars/jms-1.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.slf4j/slf4j-api/da5a16ceca50849c47fdc7b61d1b5834/jars/slf4j-api-1.6.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/commons-io/commons-io/c12498cf18507aa6433a94eb7d3e77d5/jars/commons-io-2.0.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-asm/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-asm-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-beans/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-beans-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-core/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-core-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/commons-logging/commons-logging/da5a16ceca50849c47fdc7b61d1b5834/jars/commons-logging-1.1.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-context/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-context-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-expression/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-expression-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-aop/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-aop-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/aopalliance/aopalliance/da5a16ceca50849c47fdc7b61d1b5834/jars/aopalliance-1.0.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.springframework/spring-context-support/da5a16ceca50849c47fdc7b61d1b5834/jars/spring-context-support-3.0.5.RELEASE.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/jivesoftware/smackx/c12498cf18507aa6433a94eb7d3e77d5/jars/smackx-3.1.0.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/jivesoftware/smack/c12498cf18507aa6433a94eb7d3e77d5/jars/smack-3.1.0.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/net.sf.jalarms/jalarms-core/da5a16ceca50849c47fdc7b61d1b5834/jars/jalarms-core-1.5.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/net.sf.jalarms/jalarms-channels/c12498cf18507aa6433a94eb7d3e77d5/jars/jalarms-channels-1.5.2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsendnsca-core/c12498cf18507aa6433a94eb7d3e77d5/bundles/org.apache.servicemix.bundles.jsendnsca-core-1.3.1_2.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/spy/memcached/da5a16ceca50849c47fdc7b61d1b5834/jars/memcached-2.5.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/org.asteriskjava/asterisk-java/c12498cf18507aa6433a94eb7d3e77d5/jars/asterisk-java-1.0.0.M3.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/log4j/log4j/da5a16ceca50849c47fdc7b61d1b5834/jars/log4j-1.2.15.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/javax.mail/mail/da5a16ceca50849c47fdc7b61d1b5834/jars/mail-1.4.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/javax.activation/activation/da5a16ceca50849c47fdc7b61d1b5834/jars/activation-1.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/javax.jms/jms/da5a16ceca50849c47fdc7b61d1b5834/jars/jms-1.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/com.sun.jdmk/jmxtools/da5a16ceca50849c47fdc7b61d1b5834/jars/jmxtools-1.2.1.jar" exported="true"/>
+	<classpathentry kind="lib" path="/Users/angellore/.gradle/caches/artifacts/com.sun.jmx/jmxri/da5a16ceca50849c47fdc7b61d1b5834/jars/jmxri-1.2.1.jar" exported="true"/>
 </classpath>
