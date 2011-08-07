@@ -8,7 +8,6 @@ import javax.annotation.Resource;
 import mx.angellore.cam.alarms.commands.ICommand;
 
 import org.jivesoftware.smack.Chat;
-import org.jivesoftware.smack.ChatManager;
 import org.jivesoftware.smack.ChatManagerListener;
 import org.jivesoftware.smack.ConnectionConfiguration;
 import org.jivesoftware.smack.MessageListener;

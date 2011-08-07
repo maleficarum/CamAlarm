@@ -29,7 +29,7 @@ public class AsteriskChannel implements AlarmChannel {
 	}
 	
 	public int getMinResendInterval() {
-		return 1000 * 60 * 5;
+		return 1000 * 60 * 15;
 	}
 
 	public void send(String arg0, String arg1) {

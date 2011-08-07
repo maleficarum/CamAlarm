@@ -3,18 +3,22 @@
  */
 package mx.angellore.cam.alarms;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.ServerSocket;
-import java.net.Socket;
+import java.io.OutputStream;
+import java.net.InetSocketAddress;
+import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.solab.alarms.AlarmSender;
+import com.sun.net.httpserver.Headers;
+import com.sun.net.httpserver.HttpExchange;
+import com.sun.net.httpserver.HttpHandler;
+import com.sun.net.httpserver.HttpServer;
 
 /**
  * 
@@ -24,10 +28,8 @@ import com.solab.alarms.AlarmSender;
  */
 public class Main {
 
-	private static final byte[] RESPONSE = "HTTP/1.1 200 OK\r\nContent-Length: 4\r\nConnection: close\r\nContent-Type: text/plain\r\n\r\nDONE".getBytes();
 	private ApplicationContext ctx = null;
 	private AlarmSender sender = null;
-	private final ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
 	private String hostname;
 
 	public Main(String h) {
@@ -39,71 +41,61 @@ public class Main {
 	public void start() {
 
 		try {
-			ServerSocket server = new ServerSocket(9090);
-			String cmd = "";
+			InetSocketAddress addr = new InetSocketAddress(8080);
+			HttpServer server = HttpServer.create(addr, 0);
 
-			while(!cmd.toUpperCase().equals("EXIT")) {
-				Socket socket = server.accept();
-
-				executor.execute(new Reader(socket));
-			}
+			server.createContext("/alarm", new AlarmRequestHandler());
+			server.setExecutor(Executors.newCachedThreadPool());
+			server.start();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
 
-	class Reader implements Runnable {
-
-		private Socket s ;
+	class AlarmRequestHandler implements HttpHandler {
 		
-		public Reader(Socket s) {
-			this.s = s;
+		public void handle(HttpExchange exchange) throws IOException {
+			String requestMethod = exchange.getRequestMethod();
+			if (requestMethod.equalsIgnoreCase("GET")) {
+				Headers responseHeaders = exchange.getResponseHeaders();
+				responseHeaders.set("Content-Type", "text/plain");
+				exchange.sendResponseHeaders(200, 0);
+
+				URI requestedUri = exchange.getRequestURI();
+				String query = requestedUri.getRawQuery();
+
+				OutputStream responseBody = exchange.getResponseBody();
+
+				Map<String, String> args = getQueryString(query);
+				
+				sender.sendAlarm(hostname, args.get("alarm"));
+				
+				responseBody.write("done".getBytes());
+
+				responseBody.close();
+			}
 		}
-
-		public void run() {
-
-			try {
-				BufferedReader reader = new BufferedReader(new InputStreamReader(s.getInputStream()));
-				
-                String linea = reader.readLine();
-                
-                if (linea.startsWith("POST")) {
-                        int largo = 0;
-                        while (linea.length() > 0) {
-                                linea = reader.readLine();
-                                if (linea.startsWith("Content-Length: ")) {
-                                        largo = Integer.parseInt(linea.substring(16));
-                                }
-                        }
-                        if (largo > 0) {
-                                char[] buf = new char[largo];
-                                reader.read(buf);
-                                linea = new String(buf);
-                        } else {
-                                linea = reader.readLine();
-                        }
-                } else if (linea.startsWith("GET")) {
-                        int pos = linea.indexOf('?');
-                        int p2 = linea.lastIndexOf(" HTTP/");
-                        if (pos > 0 && p2 > 20) {
-                                linea = linea.substring(pos + 1, p2);
-                        } else {
-                                linea = null;
-                        }
-                } else {
-                        linea = null;
-                }
-
-                s.getOutputStream().write(RESPONSE);
-                s.getOutputStream().flush();
-                s.close();		
-                
-                sender.sendAlarm(hostname, linea);
-				
-			} catch (IOException e) {
-				e.printStackTrace();
-			}		
+		
+		private Map<String, String> getQueryString(String qs) {
+			Map<String, String> map = new HashMap<String, String>();
+			String[] params = null;
+			
+			if(qs.indexOf("&") > 0) {
+				params = qs.split("&");
+			} else {
+				params = new String[1];
+				params[0] = qs;
+			}
+			
+			for(String p : params) {
+				if(p.indexOf("=") > 0) {
+					String[] pair = p.split("=");
+					map.put(pair[0], pair[1]);
+				}
+			}
+			
+			return map;
 		}
 	}
 
