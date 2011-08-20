@@ -22,6 +22,7 @@ public class GetCamUrls implements ICommand {
 	
 	private final ICommand ipCmd = new GetIP();
 	private InetAddress addr = null;
+	private String lanIp = "";
 	
 	public GetCamUrls() {
 		try {
@@ -38,16 +39,20 @@ public class GetCamUrls implements ICommand {
 		
 		if(resp.size() == 1) {
 			String ip = resp.get(0);
-			responses.add(String.format("http://%s:1981", ip));
-			responses.add(String.format("http://%s:1982", ip));
+			responses.add(String.format("IP Externa : http://%s:1981", ip));
+			responses.add(String.format("IP Externa : http://%s:1982", ip));
 			
 			if(addr != null) {
-				responses.add(String.format("http://%s:1981", new String(addr.getHostAddress())));
-				responses.add(String.format("http://%s:1982", new String(addr.getHostAddress())));	
+				responses.add(String.format("IP Interna : http://%s:1981", lanIp));
+				responses.add(String.format("IP Interna : http://%s:1982", lanIp));	
 			}
 		}
 		
 		return responses;
+	}
+
+	public void setLanIp(String lanIp) {
+		this.lanIp = lanIp;
 	}
 
 }

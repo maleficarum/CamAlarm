@@ -23,7 +23,7 @@ import mx.angellore.cam.alarms.commands.ICommand;
 public class GetIP implements ICommand {
 
 	private final String WHATISMYIP = "http://automation.whatismyip.com/n09230945.asp";
-	
+
 	public List<String> execute(Object... args) {
 		List<String> responses = new ArrayList<String>();
 
@@ -45,5 +45,4 @@ public class GetIP implements ICommand {
 		}
 		return responses;
 	}
-
 }
