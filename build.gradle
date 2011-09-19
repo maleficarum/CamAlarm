@@ -1,5 +1,6 @@
 apply plugin:'java'
 apply plugin:'eclipse'
+apply plugin: 'scala'
 defaultTasks 'build'
 version='2.0'
 
@@ -10,6 +11,9 @@ repositories {
 }
 
 dependencies {
+	scalaTools 'org.scala-lang:scala-compiler:2.8.1'
+	scalaTools 'org.scala-lang:scala-library:2.8.1'
+
 	compile 'org.slf4j:slf4j-api:1.6.1',
 		'commons-io:commons-io:2.0.1', 
 		'org.springframework:spring-asm:3.0.5.RELEASE',
@@ -21,7 +25,8 @@ dependencies {
 		'jivesoftware:smackx:3.1.0',
 		'net.sf.jalarms:jalarms-core:1.5.2','net.sf.jalarms:jalarms-channels:1.5.2',
 		'spy:memcached:2.5',
-		'org.asteriskjava:asterisk-java:1.0.0.M3'
+		'org.asteriskjava:asterisk-java:1.0.0.M3',
+		'org.scala-lang:scala-library:2.8.1'
 }
 
 eclipseClasspath {
@@ -34,6 +39,9 @@ sourceSets {
 			srcDir 'src'
 		}
 		resources {
+			srcDir 'src'
+		}
+		scala {
 			srcDir 'src'
 		}
 	}
