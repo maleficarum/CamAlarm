@@ -31,6 +31,7 @@ public class GtalkChannel implements AlarmChannel, MessageListener {
 
 	private XMPPConnection connection = null;
 	private List<String> destinos ;
+	private int minResendInterval = 1000 * 60 * 5;
 
 	public GtalkChannel(String u, String p, List<String> dest) {
 		destinos = dest;
@@ -54,7 +55,11 @@ public class GtalkChannel implements AlarmChannel, MessageListener {
 	}
 
 	public int getMinResendInterval() {
-		return 1000 * 60 * 5;
+		return minResendInterval;
+	}
+
+	public void setMinResendInterval(int minResendInterval) {
+		this.minResendInterval = minResendInterval;
 	}
 
 	public void send(String arg0, String arg1) {
