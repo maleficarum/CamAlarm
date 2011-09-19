@@ -13,16 +13,14 @@ import com.auronix.calixta.sms.SMSGateway
  *
  * @version $ Id : CalixtaSMSChannel.scala , v 1.0 19/09/2011 angellore $
  */
-class CalixtaSMSChannel extends AlarmChannel {
+class CalixtaSMSChannel(destListName:String) extends AlarmChannel {
   
 	@BeanProperty
-	var minResendInterval:Int = 0
+	var minResendInterval:Int = 1000 * 10 * 5
 	val smsg = new SMSGateway();
 	
 	def send (arg0:String, arg1:String) = {
-		val csv = "NOMBRE,TELEFONO\r\nMike,ABCD"
-		val resp = smsg.sendCSVString(csv,"Hola {$NOMBRE$}, saludos desde Java.");
-		println(resp)
+		smsg.sendMessageToList(destListName, arg1);
 	}
 	
 	def shutdown = {

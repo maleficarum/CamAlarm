@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="con" path="com.springsource.sts.gradle.classpathcontainer"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
@@ -30,5 +29,6 @@
 	<classpathentry exported="true" kind="lib" path="/Users/angellore/.gradle/caches/artifacts/com.sun.jmx/jmxri/da5a16ceca50849c47fdc7b61d1b5834/jars/jmxri-1.2.1.jar"/>
 	<classpathentry kind="lib" path="lib/sid-java-wrapper.jar"/>
 	<classpathentry kind="lib" path="lib/SMSGatewayFull142.jar"/>
+	<classpathentry exported="true" kind="con" path="com.springsource.sts.gradle.classpathcontainer"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

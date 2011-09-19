@@ -4,14 +4,13 @@
 package mx.angellore.cam.alarms;
 
 import java.io.IOException;
+
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
-
-import mx.angellore.cam.alarms.channel.CalixtaSMSChannel;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -74,7 +73,7 @@ public class Main {
 				sender.sendAlarm(hostname, args.get("alarm"));
 				
 				responseBody.write("done".getBytes());
-
+				responseBody.flush();
 				responseBody.close();
 			}
 		}
@@ -102,9 +101,7 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		//new Main("").start();
-		CalixtaSMSChannel chan = new CalixtaSMSChannel();
-		chan.send("a", "b");
+		new Main("").start();
 	}
 
 }
