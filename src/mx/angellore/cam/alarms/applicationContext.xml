@@ -15,7 +15,7 @@
 	</bean>
 	<bean id="gtalkChannel" class="mx.angellore.cam.alarms.channel.GtalkChannel">
 		<constructor-arg index="0">
-			<value>camserverd@</value>
+			<value>@</value>
 		</constructor-arg>
 		<constructor-arg index="1">
 			<value></value>
@@ -26,10 +26,13 @@
 				<value>@</value>
 			</list>
 		</constructor-arg>
+		<property name="minResendInterval" value="5000" />
 	</bean>
 	<bean id="twitterChannel" class="com.solab.alarms.channels.twitter.TwitterChannel">
 	    <property name="accessToken" value="" />
 	    <property name="tokenSecret" value="" />
+	    <property name="prefix" value="" />
+	    <property name="minResendInterval" value="5000" />
 	</bean>	
 	
 	<bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
@@ -59,6 +62,34 @@
 			</map>
 		</property>
 	</bean>	
+	
+	<bean id="javaMailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
+    		<property name="username" value="" />
+    		<property name="password" value="" />
+    		<property name="javaMailProperties">
+    			<props>
+		        <prop key="mail.smtp.from"></prop>
+		        <prop key="mail.smtp.user"></prop>
+	        	<prop key="mail.smtp.password"></prop>
+		        <prop key="mail.smtp.host">smtp.gmail.com</prop>
+		        <prop key="mail.smtp.port">587</prop>
+	        	<prop key="mail.smtp.auth">true</prop>
+	        	<prop key="mail.smtp.starttls.enable">true</prop>
+	    	</props>
+	    </property>
+	</bean>
+	
+	<bean id="alarmMailChannel" class="com.solab.alarms.channels.MailChannel">
+	        <property name="javaMailSender" ref="javaMailSender" />
+        	<property name="mailTemplate">
+			<bean class="org.springframework.mail.SimpleMailMessage">
+                		<property name="subject" value="" />
+                		<property name="from" value="" />
+                		<property name="text"><value>${msg}</value></property>
+                		<property name="to" value="" />
+			</bean>
+		</property>
+        </bean>	
 	
 	<bean id="alarmSender" class="com.solab.alarms.AlarmSender">
          <property name="alarmChannels"><list>
