@@ -15,62 +15,33 @@
 	</bean>
 	<bean id="gtalkChannel" class="mx.angellore.cam.alarms.channel.GtalkChannel">
 		<constructor-arg index="0">
-			<value>@</value>
+			<value>wishes.master@gmail.com</value>
 		</constructor-arg>
 		<constructor-arg index="1">
-			<value></value>
+			<value>oscar.2007.ivan</value>
 		</constructor-arg>
 		<constructor-arg index="2">
 			<list>
-				<value>@</value>
-				<value>@</value>
+				<value>oscar@angellore.com.mx</value>
 			</list>
 		</constructor-arg>
 		<property name="minResendInterval" value="5000" />
 	</bean>
 	<bean id="twitterChannel" class="com.solab.alarms.channels.twitter.TwitterChannel">
-	    <property name="accessToken" value="" />
-	    <property name="tokenSecret" value="" />
-	    <property name="prefix" value="" />
+	    <property name="accessToken" value="344432804-2GM7PBouXU3NY9l82MXoGiuw8eT4OWyftzjpOiZr" />
+	    <property name="tokenSecret" value="uageuzzOkbKGgmWigOAYIZkiscZHdt3zb8EirR3Aw" />
+	    <property name="prefix" value="CamServer" />
 	    <property name="minResendInterval" value="5000" />
-	</bean>	
-	
-	<bean id="asteriskChannel" class="mx.angellore.cam.alarms.channel.AsteriskChannel">
-		<constructor-arg index="0">
-			<value>localhost</value>
-		</constructor-arg>
-		<constructor-arg index="1">
-			<value>manager</value>
-		</constructor-arg>
-		<constructor-arg index="2">
-			<value>pa55w0rd</value>
-		</constructor-arg>
-		<property name="config">
-			<map>
-				<entry key="CHANNEL">
-					<value>SIP/</value>
-				</entry>
-				<entry key="CONTEXT">
-					<value></value>
-				</entry>
-				<entry key="EXTENSION">
-					<value>666</value>
-				</entry>
-				<entry key="CALLERID">
-					<value>Urgent</value>
-				</entry>
-			</map>
-		</property>
-	</bean>	
+	</bean>
 	
 	<bean id="javaMailSender" class ="org.springframework.mail.javamail.JavaMailSenderImpl" >
-    		<property name="username" value="" />
-    		<property name="password" value="" />
+    		<property name="username" value="wishes.master@gmail.com" />
+    		<property name="password" value="oscar.2007.ivan" />
     		<property name="javaMailProperties">
     			<props>
-		        <prop key="mail.smtp.from"></prop>
-		        <prop key="mail.smtp.user"></prop>
-	        	<prop key="mail.smtp.password"></prop>
+		        <prop key="mail.smtp.from">wishes.master@gmail.com</prop>
+		        <prop key="mail.smtp.user">wishes.master@gmail.com</prop>
+	        	<prop key="mail.smtp.password">oscar.2007.ivan</prop>
 		        <prop key="mail.smtp.host">smtp.gmail.com</prop>
 		        <prop key="mail.smtp.port">587</prop>
 	        	<prop key="mail.smtp.auth">true</prop>
@@ -79,14 +50,21 @@
 	    </property>
 	</bean>
 	
+	<bean id="smsChannel" class="mx.angellore.cam.alarms.channel.CalixtaSMSChannel">
+		<constructor-arg>
+			<value>AlarmaCasa</value>
+		</constructor-arg>
+		<property name="minResendInterval" value="5000"></property>
+	</bean>
+	
 	<bean id="alarmMailChannel" class="com.solab.alarms.channels.MailChannel">
 	        <property name="javaMailSender" ref="javaMailSender" />
         	<property name="mailTemplate">
 			<bean class="org.springframework.mail.SimpleMailMessage">
-                		<property name="subject" value="" />
-                		<property name="from" value="" />
+                		<property name="subject" value="Alarma" />
+                		<property name="from" value="wishes.master@gmai.com" />
                 		<property name="text"><value>${msg}</value></property>
-                		<property name="to" value="" />
+                		<property name="to" value="oscar@angellore.com.mx" />
 			</bean>
 		</property>
         </bean>	
@@ -95,7 +73,8 @@
          <property name="alarmChannels"><list>
                 <ref local="gtalkChannel" />
                 <ref local="twitterChannel" />
-                <ref local="asteriskChannel" />
+                <ref local="alarmMailChannel" />
+                <ref local="smsChannel" />
         </list></property>
         <property name="alarmCache">
         	<ref local="memcached" />
@@ -109,7 +88,9 @@
 			 		<bean class="mx.angellore.cam.alarms.commands.impl.GetIP" />
 			 	</entry>
 			 	<entry key="CAMS">
-			 		<bean class="mx.angellore.cam.alarms.commands.impl.GetCamUrls" />
+			 		<bean class="mx.angellore.cam.alarms.commands.impl.GetCamUrls">
+			 			<property name="lanIp" value="192.168.1.68" />
+			 		</bean>
 			 	</entry>
 			</map>
 		</constructor-arg>
