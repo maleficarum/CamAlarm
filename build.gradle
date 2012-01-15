@@ -3,12 +3,13 @@ apply plugin:'java'
 apply plugin:'eclipse'
 
 defaultTasks 'build'
-version='2.0'
+version='1.1'
 
 repositories {
 	mavenLocal()
 	mavenCentral()
 	mavenRepo name:'Spy Repository', urls:'http://bleu.west.spy.net/~dustin/m2repo'
+	flatDir name:'calixta', dirs:['./lib']
 }
 
 dependencies {
@@ -18,6 +19,7 @@ dependencies {
 	compile 'org.slf4j:slf4j-api:1.6.1',
 		'commons-io:commons-io:2.0.1',
 		'commons-httpclient:commons-httpclient:3.1',
+		'commons-codec:commons-codec:1.2',
 		'org.springframework:spring-asm:3.0.5.RELEASE',
 		'org.springframework:spring-beans:3.0.5.RELEASE',
 		'org.springframework:spring-context:3.0.5.RELEASE',
@@ -28,7 +30,8 @@ dependencies {
 		'net.sf.jalarms:jalarms-core:1.5.2','net.sf.jalarms:jalarms-channels:1.5.2',
 		'spy:memcached:2.5',
 		'org.asteriskjava:asterisk-java:1.0.0.M3',
-		'org.scala-lang:scala-library:2.9.1'
+		'org.scala-lang:scala-library:2.9.1',
+		'calixta:SMSGatewayFULL142'
 }
 
 eclipseClasspath {

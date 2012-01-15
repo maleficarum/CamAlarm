@@ -8,8 +8,6 @@ import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jivesoftware.smack.packet.Message;
-
 import mx.angellore.cam.alarms.commands.ICommand;
 
 /**

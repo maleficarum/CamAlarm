@@ -101,7 +101,12 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		new Main("DevEnv").start();
+		if(args.length == 0) {
+			new Main("DevEnv").start();	
+		} else {
+			new Main(args[0]).start();
+		}
+		
 	}
 
 }

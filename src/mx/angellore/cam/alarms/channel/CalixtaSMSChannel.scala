@@ -6,6 +6,7 @@ package mx.angellore.cam.alarms.channel
 import com.solab.alarms.AlarmChannel
 import scala.reflect.BeanProperty
 import com.auronix.calixta.sms.SMSGateway
+import org.slf4j.LoggerFactory
 
 /**
  * 
@@ -16,11 +17,13 @@ import com.auronix.calixta.sms.SMSGateway
 class CalixtaSMSChannel(destListName:String) extends AlarmChannel {
   
 	@BeanProperty
-	var minResendInterval:Int = 1000 * 10 * 5
+	var minResendInterval:Int = 5000
 	val smsg = new SMSGateway();
+	val logger = LoggerFactory.getLogger(getClass())
 	
 	def send (arg0:String, arg1:String) = {
-		smsg.sendMessageToList(destListName, arg1);
+		val rcode = smsg.sendMessageToList(destListName, arg1);
+		logger.info("Rcode {}", rcode)
 	}
 	
 	def shutdown = {
