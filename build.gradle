@@ -1,14 +1,14 @@
 apply plugin: 'scala'
 apply plugin:'java'
 apply plugin:'eclipse'
-
+apply plugin:'idea'
 defaultTasks 'build'
 version='1.1'
 
 repositories {
 	mavenLocal()
 	mavenCentral()
-	mavenRepo name:'Spy Repository', urls:'http://bleu.west.spy.net/~dustin/m2repo'
+	mavenRepo url:'http://bleu.west.spy.net/~dustin/m2repo'
 	flatDir name:'calixta', dirs:['./lib']
 }
 

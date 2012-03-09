@@ -28,6 +28,5 @@ class CalixtaSMSChannel(destListName:String) extends AlarmChannel {
 	
 	def shutdown = {
 	
-	}  
-
+	}
 }

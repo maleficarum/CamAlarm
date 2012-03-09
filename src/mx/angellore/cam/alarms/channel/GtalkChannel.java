@@ -7,15 +7,12 @@ import javax.annotation.Resource;
 
 import mx.angellore.cam.alarms.commands.ICommand;
 
-import org.jivesoftware.smack.Chat;
-import org.jivesoftware.smack.ChatManagerListener;
-import org.jivesoftware.smack.ConnectionConfiguration;
-import org.jivesoftware.smack.MessageListener;
-import org.jivesoftware.smack.XMPPConnection;
-import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smack.*;
 import org.jivesoftware.smack.packet.Message;
 
 import com.solab.alarms.AlarmChannel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -24,7 +21,7 @@ import com.solab.alarms.AlarmChannel;
  *
  * @version $ Id : GtalkChannel.java , v 1.0 26/07/2011 angellore $
  */
-public class GtalkChannel implements AlarmChannel, MessageListener {
+public class GtalkChannel implements AlarmChannel, MessageListener, ConnectionListener {
 
 	@Resource(name="commands")
 	private Map<String, ICommand> commands;
@@ -32,27 +29,39 @@ public class GtalkChannel implements AlarmChannel, MessageListener {
 	private XMPPConnection connection = null;
 	private List<String> destinos ;
 	private int minResendInterval = 1000 * 60 * 5;
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+    private String user ;
+    private String password ;
 
 	public GtalkChannel(String u, String p, List<String> dest) {
 		destinos = dest;
-		ConnectionConfiguration config = new ConnectionConfiguration("talk.google.com", 5222, "gmail.com");
-		connection = new XMPPConnection(config);
-
-
-		try {
-			connection.connect();			
-			connection.login(u, p);
-			
-			connection.getChatManager().addChatListener(
-				    new ChatManagerListener() {
-				        public void chatCreated(Chat chat, boolean createdLocally) {
-				                chat.addMessageListener(GtalkChannel.this);
-				        }
-				    });			
-		} catch (XMPPException e) {
-			e.printStackTrace();
-		}
+        user = u;
+        password = p;
+        logger.info("Inicializado ....");
+        connect();
 	}
+
+    private void connect() {
+        logger.info("Conectando a gmail ...");
+        ConnectionConfiguration config = new ConnectionConfiguration("talk.google.com", 5222, "gmail.com");
+        connection = new XMPPConnection(config);
+
+
+        try {
+            connection.connect();
+            connection.login(user, password);
+
+            connection.getChatManager().addChatListener(
+                    new ChatManagerListener() {
+                        public void chatCreated(Chat chat, boolean createdLocally) {
+                            chat.addMessageListener(GtalkChannel.this);
+                        }
+                    });
+            connection.addConnectionListener(this);
+        } catch (XMPPException e) {
+            e.printStackTrace();
+        }
+    }
 
 	public int getMinResendInterval() {
 		return minResendInterval;
@@ -100,4 +109,31 @@ public class GtalkChannel implements AlarmChannel, MessageListener {
 		}
 	}
 
+    @Override
+    public void connectionClosed() {
+        logger.warn("Conexion cerrada. Reconectando ...");
+        connect();
+    }
+
+    @Override
+    public void connectionClosedOnError(Exception e) {
+        logger.warn("Se produjo un error. Reconectando ...", e);
+        connect();
+    }
+
+    @Override
+    public void reconnectingIn(int i) {
+        logger.warn("Reconectando " + i);
+    }
+
+    @Override
+    public void reconnectionSuccessful() {
+        //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public void reconnectionFailed(Exception e) {
+        logger.error("No se pudo reconectar. Intentando de nuevo ...", e);
+        connect();
+    }
 }
