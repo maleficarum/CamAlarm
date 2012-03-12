@@ -109,29 +109,24 @@ public class GtalkChannel implements AlarmChannel, MessageListener, ConnectionLi
 		}
 	}
 
-    @Override
     public void connectionClosed() {
         logger.warn("Conexion cerrada. Reconectando ...");
         connect();
     }
 
-    @Override
     public void connectionClosedOnError(Exception e) {
         logger.warn("Se produjo un error. Reconectando ...", e);
         connect();
     }
 
-    @Override
     public void reconnectingIn(int i) {
         logger.warn("Reconectando " + i);
     }
 
-    @Override
     public void reconnectionSuccessful() {
         //To change body of implemented methods use File | Settings | File Templates.
     }
 
-    @Override
     public void reconnectionFailed(Exception e) {
         logger.error("No se pudo reconectar. Intentando de nuevo ...", e);
         connect();
