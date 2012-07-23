@@ -9,12 +9,17 @@ repositories {
 	mavenLocal()
 	mavenCentral()
 	mavenRepo url:'http://bleu.west.spy.net/~dustin/m2repo'
+	mavenRepo url:'https://repository.jboss.org/nexus/content/groups/public'
+	mavenRepo url:"https://raw.github.com/maleficarum/mavenrepo/master/releases"
 	flatDir name:'calixta', dirs:['./lib']
 }
-
+configurations {
+    compile.exclude module: 'com.sun.jmx:jmxri:1.2.1'
+}
 dependencies {
 	scalaTools 'org.scala-lang:scala-compiler:2.9.1'
 	scalaTools 'org.scala-lang:scala-library:2.9.1'
+
 
 	compile 'org.slf4j:slf4j-api:1.6.1',
 		'commons-io:commons-io:2.0.1',
