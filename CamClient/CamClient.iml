@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="Spring" name="Spring">
+    <facet type="web" name="Web">
       <configuration>
-        <fileset id="fileset2" name="Xml Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/mx/angellore/cam/alarms/applicationContext.xml</file>
-        </fileset>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
+        </webroots>
       </configuration>
+      <facet type="google-app-engine" name="Google App Engine">
+        <configuration>
+          <sdk-home-path>$MODULE_DIR$/build/exploded-gae-sdk/appengine-java-sdk-1.7.0</sdk-home-path>
+        </configuration>
+      </facet>
     </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">

@@ -3,6 +3,36 @@
   <component name="AntConfiguration">
     <defaultAnt bundledAnt="true" />
   </component>
+  <component name="ArtifactManager">
+    <artifact type="exploded-war" name="CamAlarm:war exploded">
+      <output-path>$PROJECT_DIR$/out/artifacts/CamAlarm_war_exploded</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="CamAlarm/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="CamAlarm" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="AppEngine API" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+    <artifact type="exploded-war" name="CamServer:war exploded">
+      <output-path>$PROJECT_DIR$/out/artifacts/CamServer_war_exploded</output-path>
+      <root id="root">
+        <element id="javaee-facet-resources" facet="CamServer/web/Web" />
+        <element id="directory" name="WEB-INF">
+          <element id="directory" name="classes">
+            <element id="module-output" name="CamServer" />
+          </element>
+          <element id="directory" name="lib">
+            <element id="library" level="project" name="AppEngine API" />
+          </element>
+        </element>
+      </root>
+    </artifact>
+  </component>
   <component name="CompilerConfiguration">
     <option name="DEFAULT_COMPILER" value="Javac" />
     <resourceExtensions>
@@ -179,11 +209,10 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CamAlarm.iml" filepath="$PROJECT_DIR$/CamAlarm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CamClient/CamClient.iml" filepath="$PROJECT_DIR$/CamClient/CamClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/CamServer/CamServer.iml" filepath="$PROJECT_DIR$/CamServer/CamServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/CamClient/src/functionalTest/FunctionalTest.iml" filepath="$PROJECT_DIR$/CamClient/src/functionalTest/FunctionalTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/CamClient/src/test/Test.iml" filepath="$PROJECT_DIR$/CamClient/src/test/Test.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CamClient/src/main/webapp/Webapp.iml" filepath="$PROJECT_DIR$/CamClient/src/main/webapp/Webapp.iml" />
     </modules>
   </component>
   <component name="ProjectResources">
@@ -197,7 +226,17 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
+  <component name="libraryTable">
+    <library name="AppEngine API">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/CamClient/build/exploded-gae-sdk/appengine-java-sdk-1.7.0/lib/user" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/CamClient/build/exploded-gae-sdk/appengine-java-sdk-1.7.0/lib/user" recursive="false" />
+    </library>
   </component>
 </project>
 
