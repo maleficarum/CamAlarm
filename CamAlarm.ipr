@@ -180,6 +180,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CamAlarm.iml" filepath="$PROJECT_DIR$/CamAlarm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CamServer/CamServer.iml" filepath="$PROJECT_DIR$/CamServer/CamServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CamClient/src/functionalTest/FunctionalTest.iml" filepath="$PROJECT_DIR$/CamClient/src/functionalTest/FunctionalTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CamClient/src/test/Test.iml" filepath="$PROJECT_DIR$/CamClient/src/test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CamClient/src/main/webapp/Webapp.iml" filepath="$PROJECT_DIR$/CamClient/src/main/webapp/Webapp.iml" />
     </modules>
   </component>
   <component name="ProjectResources">
