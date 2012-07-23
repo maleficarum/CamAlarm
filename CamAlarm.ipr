@@ -4,8 +4,8 @@
     <defaultAnt bundledAnt="true" />
   </component>
   <component name="ArtifactManager">
-    <artifact type="exploded-war" name="CamClient:Web exploded">
-      <output-path>$PROJECT_DIR$/out/artifacts/CamClient_Web_exploded</output-path>
+    <artifact type="exploded-war" build-on-make="true" name="CamClient:Web exploded">
+      <output-path>$PROJECT_DIR$/CamClient/build/exploded-war</output-path>
       <root id="root">
         <element id="javaee-facet-resources" facet="CamClient/web/Web" />
         <element id="directory" name="WEB-INF">
