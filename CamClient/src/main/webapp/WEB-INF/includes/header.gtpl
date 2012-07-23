@@ -19,7 +19,7 @@
       }
   </style>
 </head>
-<body>
+<body lang="en">
    <div class="navbar navbar-fixed-top">
 	<div class="navbar-inner">
 		<div class="container">
@@ -29,8 +29,8 @@
 			</a> <a class="brand" href="/"><img src="/images/gaelyk-logo.png"/></a>
 			<div class="nav-collapse">
 				<ul class="nav">
-					<li class="${request.servletPath == '/WEB-INF/pages/index.gtpl' ? 'active' : ''}"><a href="/">Home</a></li>
-					<li class="${request.servletPath == '/WEB-INF/pages/datetime.gtpl' ? 'active' : ''}"><a href="/datetime">Current Time</a></li>
+					<!--li class="${request.servletPath == '/WEB-INF/pages/index.gtpl' ? 'active' : ''}"><a href="/">Home</a></li>
+					<li class="${request.servletPath == '/WEB-INF/pages/datetime.gtpl' ? 'active' : ''}"><a href="/datetime">Current Time</a></li-->
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -38,4 +38,3 @@
 	</div>
 	</div>
 
-    <div class="container">
