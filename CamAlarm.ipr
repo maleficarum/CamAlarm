@@ -4,27 +4,13 @@
     <defaultAnt bundledAnt="true" />
   </component>
   <component name="ArtifactManager">
-    <artifact type="exploded-war" name="CamAlarm:war exploded">
-      <output-path>$PROJECT_DIR$/out/artifacts/CamAlarm_war_exploded</output-path>
+    <artifact type="exploded-war" name="CamClient:Web exploded">
+      <output-path>$PROJECT_DIR$/out/artifacts/CamClient_Web_exploded</output-path>
       <root id="root">
-        <element id="javaee-facet-resources" facet="CamAlarm/web/Web" />
+        <element id="javaee-facet-resources" facet="CamClient/web/Web" />
         <element id="directory" name="WEB-INF">
           <element id="directory" name="classes">
-            <element id="module-output" name="CamAlarm" />
-          </element>
-          <element id="directory" name="lib">
-            <element id="library" level="project" name="AppEngine API" />
-          </element>
-        </element>
-      </root>
-    </artifact>
-    <artifact type="exploded-war" name="CamServer:war exploded">
-      <output-path>$PROJECT_DIR$/out/artifacts/CamServer_war_exploded</output-path>
-      <root id="root">
-        <element id="javaee-facet-resources" facet="CamServer/web/Web" />
-        <element id="directory" name="WEB-INF">
-          <element id="directory" name="classes">
-            <element id="module-output" name="CamServer" />
+            <element id="module-output" name="CamClient" />
           </element>
           <element id="directory" name="lib">
             <element id="library" level="project" name="AppEngine API" />
