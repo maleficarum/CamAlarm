@@ -14,7 +14,7 @@ repositories {
 	flatDir name:'calixta', dirs:['./lib']
 }
 configurations {
-    compile.exclude module: 'com.sun.jmx:jmxri:1.2.1'
+
 }
 dependencies {
 	scalaTools 'org.scala-lang:scala-compiler:2.9.1'
@@ -36,7 +36,7 @@ dependencies {
 		'spy:memcached:2.5',
 		'org.asteriskjava:asterisk-java:1.0.0.M3',
 		'org.scala-lang:scala-library:2.9.1',
-		'calixta:SMSGatewayFULL142'
+		'calixta:SMSGatewayFULL142','calixta:jms:1.1'
 }
 
 eclipseClasspath {
