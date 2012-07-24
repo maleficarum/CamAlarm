@@ -2,7 +2,7 @@ apply plugin: 'scala'
 apply plugin:'java'
 apply plugin:'eclipse'
 apply plugin:'idea'
-defaultTasks 'build'
+defaultTasks 'copyToLib'
 version='1.1'
 
 repositories {
@@ -37,7 +37,8 @@ dependencies {
 		'spy:memcached:2.5',
 		'org.asteriskjava:asterisk-java:1.0.0.M3',
 		'org.scala-lang:scala-library:2.9.1',
-		'calixta:SMSGatewayFULL142','calixta:jmxri:1.2.1','calixta:jmxtools:1.2.1'
+		'calixta:SMSGatewayFULL142','calixta:jmxri:1.2.1','calixta:jmxtools:1.2.1','javax.mail:mail:1.4'
+		
 }
 
 eclipseClasspath {
@@ -58,3 +59,8 @@ sourceSets {
 	}
 }
 libsDirName='lib'
+
+task copyToLib(dependsOn: jar, type: Copy) {
+    into "$buildDir/external/lib"
+    from configurations.default
+}
