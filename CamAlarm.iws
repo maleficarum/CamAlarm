@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7dd63ffc-a020-48c2-9802-0d4d78ed328a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/src/mx/angellore/cam/alarms/applicationContext.xml" afterPath="$PROJECT_DIR$/CamServer/src/mx/angellore/cam/alarms/applicationContext.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CamServer/src/mx/angellore/cam/alarms/applicationContext.xml" afterPath="" />
     </list>
     <ignored path="CamAlarm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -130,7 +130,7 @@
       <file leaf-file-name="applicationContext.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CamServer/src/mx/angellore/cam/alarms/applicationContext.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="51" selection-start="2799" selection-end="2821" vertical-scroll-proportion="0.49519232">
+            <state line="107" column="8" selection-start="4198" selection-end="4198" vertical-scroll-proportion="0.91346157">
               <folding />
             </state>
           </provider>
@@ -842,7 +842,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CamServer/src/mx/angellore/cam/alarms/applicationContext.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="51" selection-start="2799" selection-end="2821" vertical-scroll-proportion="0.49519232">
+        <state line="107" column="8" selection-start="4198" selection-end="4198" vertical-scroll-proportion="0.91346157">
           <folding />
         </state>
       </provider>
