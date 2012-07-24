@@ -1,4 +1,5 @@
 apply plugin: 'scala'
+apply plugin: 'groovy'
 apply plugin:'java'
 apply plugin:'eclipse'
 apply plugin:'idea'
@@ -11,6 +12,7 @@ repositories {
 	mavenRepo url:'http://bleu.west.spy.net/~dustin/m2repo'
 	mavenRepo url:'https://repository.jboss.org/nexus/content/groups/public'
 	mavenRepo url:"https://raw.github.com/maleficarum/mavenrepo/master/releases"
+    mavenRepo url:'http://snapshots.repository.codehaus.org'
 	flatDir name:'calixta', dirs:['./lib']
 }
 configurations {
@@ -18,8 +20,10 @@ configurations {
 }
 dependencies {
 	def springVersion = "3.1.0"
+    def groovyVersion = "2.0.0"
 	scalaTools 'org.scala-lang:scala-compiler:2.9.1'
 	scalaTools 'org.scala-lang:scala-library:2.9.1'
+    groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
 
 	compile 'org.slf4j:slf4j-api:1.6.6','log4j:log4j:1.2.17',
@@ -37,8 +41,11 @@ dependencies {
 		'spy:memcached:2.5',
 		'org.asteriskjava:asterisk-java:1.0.0.M3',
 		'org.scala-lang:scala-library:2.9.1',
-		'calixta:SMSGatewayFULL142','calixta:jmxri:1.2.1','calixta:jmxtools:1.2.1','javax.mail:mail:1.4'
-		
+		'calixta:SMSGatewayFULL142','calixta:jmxri:1.2.1','calixta:jmxtools:1.2.1','javax.mail:mail:1.4' ,
+            'org.codehaus.groovy.modules.http-builder:http-builder:0.5.2'
+    runtime 'org.slf4j:slf4j-log4j12:1.6.6'
+
+
 }
 
 eclipseClasspath {
@@ -56,6 +63,9 @@ sourceSets {
 		scala {
 			srcDir 'src'
 		}
+        groovy {
+            srcDir 'src'
+        }
 	}
 }
 libsDirName='lib'

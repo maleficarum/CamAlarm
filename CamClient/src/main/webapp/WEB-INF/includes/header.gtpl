@@ -30,7 +30,7 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<!--li class="${request.servletPath == '/WEB-INF/pages/index.gtpl' ? 'active' : ''}"><a href="/">Home</a></li>
-					<li class="${request.servletPath == '/WEB-INF/pages/datetime.gtpl' ? 'active' : ''}"><a href="/datetime">Current Time</a></li-->
+					<li class="${request.servletPath == '/WEB-INF/pages/pingCam.gtpl' ? 'active' : ''}"><a href="/datetime">Current Time</a></li-->
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

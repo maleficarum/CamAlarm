@@ -25,6 +25,7 @@
                         <li>Nombre : ${currentCam.name}</li>
                         <li>Ultimo contacto : ${currentCam.lastPingDate}</li>
                         <li>Fecha de registro : ${currentCam.loginDate}</li>
+                        <li>Direccion IP : ${currentCam.ip}</li>
                     </ul>
                 <% } %>
             </div><!--/.well -->

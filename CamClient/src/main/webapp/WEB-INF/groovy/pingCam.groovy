@@ -12,14 +12,15 @@ def cam = cams.find { it.name == camname }
 
 if(!cam) {
     cam = new Cam()
-    cam.lastPingDate = new Date()
     cam.name = camname
     cam.loginDate = new Date()
-} else {
-    cam.lastPingDate = new Date()
 }
+
+cam.lastPingDate = new Date()
+cam.ip = request.getRemoteAddr()
+
 cams.remove(cam)
 cams << cam
 application.setAttribute("cams", cams)
 
-forward '/WEB-INF/pages/index.gtpl'
+forward '/WEB-INF/pages/pingCam.gtpl'

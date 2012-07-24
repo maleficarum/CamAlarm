@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
 
+import mx.angellore.cam.alarms.commands.ICommand;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -48,6 +49,10 @@ public class Main {
 			server.createContext("/alarm", new AlarmRequestHandler());
 			server.setExecutor(Executors.newCachedThreadPool());
 			server.start();
+
+            Map<String, ICommand> commands = (Map<String, ICommand>) ctx.getBean("commands");
+            ICommand cmd = commands.get("CHANGE-STATUS");
+            cmd.execute(new Object[] { "STARTUP" , hostname });
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

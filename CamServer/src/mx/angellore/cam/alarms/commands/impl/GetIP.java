@@ -22,13 +22,13 @@ import mx.angellore.cam.alarms.commands.ICommand;
  */
 public class GetIP implements ICommand {
 
-	private final String WHATISMYIP = "http://automation.whatismyip.com/n09230945.asp";
+	private String URL = "http://automation.whatismyip.com/n09230945.asp";
 
 	public List<String> execute(Object... args) {
 		List<String> responses = new ArrayList<String>();
 
 		try {
-			URL url = new URL(WHATISMYIP);
+			URL url = new URL(URL);
 			InputStream in = url.openStream();
 			
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
@@ -45,4 +45,8 @@ public class GetIP implements ICommand {
 		}
 		return responses;
 	}
+
+    public void setUrl(String url) {
+        URL = url;
+    }
 }
