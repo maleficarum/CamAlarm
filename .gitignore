@@ -1,3 +1,7 @@
-src/mx/angellore/cam/alarms/applicationContext.xml
-.gradle/1.0-milestone-7/
-bin
+CamServer/src/mx/angellore/cam/alarms/applicationContext.xml
+CamServer/.gradle
+CamServer/build
+CamClient/.gradle
+CamClient/build
+CamClient/gradle
+
