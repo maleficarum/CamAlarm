@@ -74,3 +74,8 @@ task copyToLib(dependsOn: jar, type: Copy) {
     into "$buildDir/external/lib"
     from configurations.default
 }
+
+task(runSimple, dependsOn: 'classes', type: JavaExec) {
+    main = 'mx.angellore.cam.alarms.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}

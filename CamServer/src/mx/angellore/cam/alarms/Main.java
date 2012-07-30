@@ -12,7 +12,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executors;
 
-import mx.angellore.cam.alarms.commands.ICommand;
+import groovy.lang.GroovyInterceptable;
+import groovy.lang.GroovyObject;
+import java.util.Map;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -50,9 +52,10 @@ public class Main {
 			server.setExecutor(Executors.newCachedThreadPool());
 			server.start();
 
-            Map<String, ICommand> commands = (Map<String, ICommand>) ctx.getBean("commands");
-            ICommand cmd = commands.get("CHANGE-STATUS");
-            cmd.execute(new Object[] { "STARTUP" , hostname });
+            Map<String, GroovyInterceptable> timers = ctx.getBeansOfType(GroovyInterceptable.class);
+            System.out.println(timers);
+            //ICommand cmd = commands.get("CHANGE-STATUS");
+            //cmd.execute(new Object[] { "STARTUP" , hostname });
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

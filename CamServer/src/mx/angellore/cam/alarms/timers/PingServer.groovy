@@ -1,4 +1,4 @@
-package mx.angellore.cam.alarms.commands.impl
+package mx.angellore.cam.alarms.timers
 
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
