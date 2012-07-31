@@ -1,0 +1,57 @@
+apply plugin: 'groovy'
+apply plugin:'idea'
+defaultTasks 'copyToLib'
+version='0.1'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    mavenRepo url:'http://bleu.west.spy.net/~dustin/m2repo'
+    mavenRepo url:'https://repository.jboss.org/nexus/content/groups/public'
+    mavenRepo url:"https://raw.github.com/maleficarum/mavenrepo/master/releases"
+    mavenRepo url:'http://snapshots.repository.codehaus.org'
+    flatDir name:'calixta', dirs:['./lib']
+}
+configurations {
+
+}
+dependencies {
+    def springVersion = "3.1.0"
+    def groovyVersion = "2.0.0"
+    groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
+
+
+    compile 'org.slf4j:slf4j-api:1.6.6','log4j:log4j:1.2.17',
+            "org.springframework:spring-beans:${springVersion}.RELEASE",
+            "org.springframework:spring-context:${springVersion}.RELEASE",
+            "org.springframework:spring-context-support:${springVersion}.RELEASE",
+            "org.springframework:spring-core:${springVersion}.RELEASE",
+            'spy:memcached:2.5',
+            'net.sf.jalarms:jalarms-groovy:1.6.1'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src/main/resources'
+        }
+        groovy {
+            srcDir 'src/main/groovy'
+        }
+    }
+}
+
+libsDirName='lib'
+
+task copyToLib(dependsOn: jar, type: Copy) {
+    into "$buildDir/external/lib"
+    from configurations.default
+}
+
+task(runSimple, dependsOn: 'classes', type: JavaExec) {
+    main = 'mx.com.maleficarum.alarms.server.Main'
+    classpath = sourceSets.main.runtimeClasspath
+}

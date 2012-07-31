@@ -1,0 +1,21 @@
+package mx.com.maleficarum.alarms.server
+
+import org.springframework.context.support.ClassPathXmlApplicationContext
+
+/**
+ * Date: 30/07/12 22:46
+ * @author Oscar I. Hernandez
+ */
+class Main {
+
+    def ctx
+
+    public Main(hostname) {
+        ctx = new ClassPathXmlApplicationContext(["spring-config.xml"] as String[])
+    }
+
+    static void main(args) {
+        new Main(args.length == 0 ? "Dev" : args[0])
+    }
+
+}
