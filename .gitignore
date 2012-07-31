@@ -1,7 +1,4 @@
-CamServer/src/mx/angellore/cam/alarms/applicationContext.xml
-CamServer/.gradle
+CamServer/src/main/resources/spring-private.xml
+CamServer/.gradle/
 CamServer/build
-CamClient/.gradle
-CamClient/build
-CamClient/gradle
-
+out/

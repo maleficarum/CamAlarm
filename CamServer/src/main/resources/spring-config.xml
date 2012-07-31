@@ -6,10 +6,56 @@
 
     <bean id="alarmSender" class="com.solab.alarms.AlarmSenderImpl">
         <property name="alarmChannels"><list>
+            <ref local="mailChannel" />
         </list></property>
+    </bean>
+
+    <bean id="mailChannel" class="com.solab.alarms.channels.MailChannel">
+        <property name="javaMailSender" ref="javaMailSender" />
+        <property name="templatesBySource">
+            <map>
+                <entry key="PING">
+                    <bean class="org.springframework.mail.SimpleMailMessage">
+                        <property name="subject" value="PING" />
+                        <property name="from" value="services@angellore.com.mx" />
+                        <property name="text"><value>
+                            Este mensaje es para notificar que la aplicacion esta arriba : ${msg}
+                        </value></property>
+                        <property name="to" value="oscar@angellore.com.mx" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
     </bean>
 
     <bean id="httpSever" class="mx.com.maleficarum.alarms.server.CamHTTPSever">
         <property name="port"><value>9191</value></property>
     </bean>
+
+    <bean id="javaMailSenderTemplate" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="465" />
+        <property name="protocol" value="smtps" />
+        <property name="username" value="" />
+        <property name="password" value="" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtps.auth">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="twitterChannelTemplate" class="com.solab.alarms.channels.twitter.TwitterChannel">
+        <property name="accessToken" value="AccessTokenObtenidoEjecutandoElPrograma_TwitterAuth" />
+        <property name="tokenSecret" value="SecretoObtenidoDelPrograma_TwitterAuth_incluidioEn_jAlarms" />
+        <property name="alarmSource">
+            <set>
+                <list>
+                    <value>PING</value>
+                </list>
+            </set>
+        </property>
+    </bean>
+    
+    <import resource="spring-private.xml" />
 </beans>

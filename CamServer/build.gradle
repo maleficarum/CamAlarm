@@ -27,7 +27,8 @@ dependencies {
             "org.springframework:spring-context-support:${springVersion}.RELEASE",
             "org.springframework:spring-core:${springVersion}.RELEASE",
             'spy:memcached:2.5',
-            'net.sf.jalarms:jalarms-groovy:1.6.1'
+            'net.sf.jalarms:jalarms-groovy:1.6.1',
+            'net.sf.jalarms:jalarms-channels:1.6.1'
 }
 
 sourceSets {

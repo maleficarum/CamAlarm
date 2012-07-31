@@ -17,6 +17,8 @@ class Main {
         interceptables.each { k, v ->
             v.invokeMethor(hostname, ctx)
         }
+
+        ctx.getBean("alarmSender").sendAlarm("Prueba", "PING")
     }
 
     static void main(args) {

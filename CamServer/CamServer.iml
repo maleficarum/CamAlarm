@@ -112,6 +112,17 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.jalarms/jalarms-channels/1.6.1/jar/2b4b76f35138152d4bdaf1295e5467a88347a4ef/jalarms-channels-1.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.jalarms/jalarms-channels/1.6.1/source/da54e10b78178493960296c3da08badfb693336/jalarms-channels-1.6.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/org.codehaus.groovy/groovy-all/2.0.0/jar/f382b10ca07a4cd47c502fa0eba2be911606af0d/groovy-all-2.0.0.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -184,6 +195,86 @@
         <SOURCES>
           <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.jalarms/jalarms-core/1.6.1/source/47945c41a8a201068cd8503745f400786fddc753/jalarms-core-1.6.1-sources.jar!/" />
         </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/org.apache.servicemix.bundles/org.apache.servicemix.bundles.jsendnsca-core/1.3.1_3/bundle/ba88e854af311bd323340883226559a14b8d2427/org.apache.servicemix.bundles.jsendnsca-core-1.3.1_3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/com.adenki/smppapi/0.3.9/jar/5e32886b0d4c956615b188cf8f8370fd713a5f09/smppapi-0.3.9.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/com.adenki/smppapi/0.3.9/source/8769e80736ee9af172580a3772b1a88637dae258/smppapi-0.3.9-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/jivesoftware/smack/3.1.0/jar/916a0fe08d840a08c950f49fb59b961e14d673b8/smack-3.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/jivesoftware/smackx/3.1.0/jar/ba1365c7e5f3cf7f7641b354677b3f54a6ea5a15/smackx-3.1.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/javax.activation/activation/1.1/jar/e6cb541461c2834bdea3eb920f1884d1eb508b50/activation-1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/javax.activation/activation/1.1/source/3697e9f67a2ed7ac5f589cff30f21173299440/activation-1.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/javax.mail/mail/1.4.1/jar/8b7bc69010655425dabf091b51d1e90b4de36715/mail-1.4.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/javax.mail/mail/1.4.1/source/805fab433b5ea319373a5dcb133b48633ad898b1/mail-1.4.1-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.ehcache/ehcache-core/2.4.6/jar/5fa26910a264313f71f1bc669c22608514543d5b/ehcache-core-2.4.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.ehcache/ehcache-core/2.4.6/source/7a2da490e88551e6f9a08827c04d2fc9ab3dc4e9/ehcache-core-2.4.6-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/unresolved dependency - net.sourceforge.java-jml#jml;1.0b4" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
   </component>
