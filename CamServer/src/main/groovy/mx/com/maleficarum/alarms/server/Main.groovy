@@ -12,6 +12,11 @@ class Main {
 
     public Main(hostname) {
         ctx = new ClassPathXmlApplicationContext(["spring-config.xml"] as String[])
+        def interceptables = ctx.getBeansOfType(GroovyInterceptable.class)
+
+        interceptables.each { k, v ->
+            v.invokeMethor(hostname, ctx)
+        }
     }
 
     static void main(args) {

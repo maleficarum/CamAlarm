@@ -9,4 +9,7 @@
         </list></property>
     </bean>
 
+    <bean id="httpSever" class="mx.com.maleficarum.alarms.server.CamHTTPSever">
+        <property name="port"><value>9191</value></property>
+    </bean>
 </beans>

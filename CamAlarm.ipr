@@ -43,6 +43,7 @@
   </component>
   <component name="GradleSettings">
     <option name="gradleHome" value="$USER_HOME$/bin/gradle-1.0" />
+    <option name="linkedProjectPath" value="$PROJECT_DIR$/CamServer/build.gradle" />
   </component>
   <component name="GradleUISettings">
     <setting name="root" />
@@ -197,8 +198,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CamClient/CamClient.iml" filepath="$PROJECT_DIR$/CamClient/CamClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/CamServer/CamServer.iml" filepath="$PROJECT_DIR$/CamServer/CamServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CamClient/src/functionalTest/FunctionalTest.iml" filepath="$PROJECT_DIR$/CamClient/src/functionalTest/FunctionalTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/CamClient/src/test/Test.iml" filepath="$PROJECT_DIR$/CamClient/src/test/Test.iml" />
     </modules>
   </component>
   <component name="ProjectResources">
