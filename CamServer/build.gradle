@@ -10,6 +10,7 @@ repositories {
     mavenRepo url:'https://repository.jboss.org/nexus/content/groups/public'
     mavenRepo url:"https://raw.github.com/maleficarum/mavenrepo/master/releases"
     mavenRepo url:'http://snapshots.repository.codehaus.org'
+    mavenRepo url:'http://java-jml.sourceforge.net/maven'
     flatDir name:'calixta', dirs:['./lib']
 }
 configurations {
@@ -17,7 +18,7 @@ configurations {
 }
 dependencies {
     def springVersion = "3.1.0"
-    def groovyVersion = "2.0.0"
+    def groovyVersion = "2.0.1"
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
 
