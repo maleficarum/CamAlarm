@@ -22,7 +22,7 @@ dependencies {
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
 
-    compile 'org.slf4j:slf4j-api:1.6.6','log4j:log4j:1.2.17',
+    compile 'org.slf4j:slf4j-api:1.6.6','org.slf4j:slf4j-log4j12:1.6.6', 'log4j:log4j:1.2.17',
             "org.springframework:spring-beans:${springVersion}.RELEASE",
             "org.springframework:spring-context:${springVersion}.RELEASE",
             "org.springframework:spring-context-support:${springVersion}.RELEASE",

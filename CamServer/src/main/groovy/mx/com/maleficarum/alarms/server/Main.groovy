@@ -15,7 +15,7 @@ class Main {
         def interceptables = ctx.getBeansOfType(GroovyInterceptable.class)
 
         interceptables.each { k, v ->
-            v.invokeMethor(hostname, ctx)
+            v.invokeMethod(hostname, ctx)
         }
 
         ctx.getBean("alarmSender").sendAlarm("Prueba", "PING")

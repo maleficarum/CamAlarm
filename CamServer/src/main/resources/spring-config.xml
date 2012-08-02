@@ -7,6 +7,7 @@
     <bean id="alarmSender" class="com.solab.alarms.AlarmSenderImpl">
         <property name="alarmChannels"><list>
             <ref local="mailChannel" />
+            <ref bean="twitterChannel" />
         </list></property>
     </bean>
 
@@ -23,6 +24,9 @@
                         </value></property>
                         <property name="to" value="oscar@angellore.com.mx" />
                     </bean>
+                </entry>
+                <entry key="FATAL">
+                    <ref bean="mailDestinationList" />
                 </entry>
             </map>
         </property>
@@ -48,13 +52,14 @@
     <bean id="twitterChannelTemplate" class="com.solab.alarms.channels.twitter.TwitterChannel">
         <property name="accessToken" value="AccessTokenObtenidoEjecutandoElPrograma_TwitterAuth" />
         <property name="tokenSecret" value="SecretoObtenidoDelPrograma_TwitterAuth_incluidioEn_jAlarms" />
-        <property name="alarmSource">
+        <!--property name="alarmSource">
             <set>
                 <list>
                     <value>PING</value>
+                    <value>FATAL</value>
                 </list>
             </set>
-        </property>
+        </property-->
     </bean>
     
     <import resource="spring-private.xml" />

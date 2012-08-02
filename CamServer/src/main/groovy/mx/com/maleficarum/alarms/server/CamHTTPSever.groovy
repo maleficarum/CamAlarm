@@ -2,6 +2,7 @@ package mx.com.maleficarum.alarms.server
 
 import java.net.ServerSocket
 import org.slf4j.LoggerFactory
+import org.springframework.context.ApplicationContext
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,28 +17,36 @@ class CamHTTPSever implements GroovyInterceptable {
     def runnable
     def port
     def logger = LoggerFactory.getLogger(CamHTTPSever.class)
+    def ctx
+    def sender
 
-    Object invokeMethod(String methodName, args) {
+    Object invokeMethod(String methodName, ApplicationContext args) {
+        ctx = args
+        sender = ctx.getBean("alarmSender")
         server = new ServerSocket(port?.toInteger())
+
         runnable = new Runnable() {
 
             void run() {
                 while(true) {
-                    server.accept() { socket ->
-                            socket.withStreams { input, output ->
-                                try {
-                                    input.eachLine() { line ->
-                                        println line
+                    try {
+                        server.accept() { socket ->
+                                socket.withStreams { input, output ->
+                                    def reader = input.newReader()
+                                    def buffer = reader.readLine()
+
+                                    if(buffer =~ /alarma/) {
+                                        def a = buffer.split("=")[1].split("HTTP")[0]
+                                        logger.info("Sending alarma ${a}")
+                                        sender.sendAlarm(a,"FATAL")
                                     }
-                                } catch (GroovyRuntimeException b) { println(b) }
-                                output.withWriter { writer ->
-                                    writer << "HTTP/1.1 200 OK\n"
-                                    writer << "Content-Type: text/html\n\n"
-                                    writer << "Hello World!"
+
+                                    output << "ok\n"
                                 }
-                                output.flush()
-                            }
-                        socket.close()
+                            socket.close()
+                        }
+                    } catch(Exception e) {
+                         e.printStackTrace()
                     }
                 }
             }
