@@ -9,16 +9,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext
 class Main {
 
     def ctx
+    def hostname
 
-    public Main(hostname) {
+    public Main(h) {
+        hostname = h
         ctx = new ClassPathXmlApplicationContext(["spring-config.xml"] as String[])
         def interceptables = ctx.getBeansOfType(GroovyInterceptable.class)
 
         interceptables.each { k, v ->
-            v.invokeMethod(hostname, ctx)
+            v.invokeMethod(hostname, ["context":ctx, "hostname":hostname])
         }
 
-        ctx.getBean("alarmSender").sendAlarm("Prueba", "PING")
+        ctx.getBean("alarmSender").sendAlarm("Sistema iniciado ${hostname}", "PING")
     }
 
     static void main(args) {

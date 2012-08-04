@@ -8,7 +8,11 @@
         <property name="alarmChannels"><list>
             <ref local="mailChannel" />
             <ref bean="twitterChannel" />
+            <ref bean="gtalkChannel" />
         </list></property>
+        <property name="alarmCache">
+            <ref local="memcached" />
+        </property>
     </bean>
 
     <bean id="mailChannel" class="com.solab.alarms.channels.MailChannel">
@@ -52,14 +56,14 @@
     <bean id="twitterChannelTemplate" class="com.solab.alarms.channels.twitter.TwitterChannel">
         <property name="accessToken" value="AccessTokenObtenidoEjecutandoElPrograma_TwitterAuth" />
         <property name="tokenSecret" value="SecretoObtenidoDelPrograma_TwitterAuth_incluidioEn_jAlarms" />
-        <!--property name="alarmSource">
-            <set>
-                <list>
-                    <value>PING</value>
-                    <value>FATAL</value>
-                </list>
-            </set>
-        </property-->
+    </bean>
+
+    <bean id="memcached" class="com.solab.alarms.AlarmMemcachedClient">
+        <property name="servers">
+            <list>
+                <value>192.168.1.104</value>
+            </list>
+        </property>
     </bean>
     
     <import resource="spring-private.xml" />

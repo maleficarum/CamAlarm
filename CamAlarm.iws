@@ -2,11 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53d1a01f-b7ef-4590-a1ce-9cf6e81cf531" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/channel/GtalkChannel.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamAlarm.ipr" afterPath="$PROJECT_DIR$/CamAlarm.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamAlarm.iws" afterPath="$PROJECT_DIR$/CamAlarm.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/build.gradle" afterPath="$PROJECT_DIR$/CamServer/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/CamServer.iml" afterPath="$PROJECT_DIR$/CamServer/CamServer.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/CamHTTPSever.groovy" afterPath="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/CamHTTPSever.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/Main.groovy" afterPath="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/Main.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/CamServer/src/main/resources/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CamServer/src/main/resources/spring-config.xml" afterPath="$PROJECT_DIR$/CamServer/src/main/resources/spring-config.xml" />
     </list>
     <ignored path="CamAlarm.iws" />
@@ -65,10 +66,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.groovy" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/Main.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="26" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
+            <state line="0" column="47" selection-start="8" selection-end="40" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -76,11 +77,8 @@
       </file>
       <file leaf-file-name="spring-config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/spring-config.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="41" selection-start="491" selection-end="491" vertical-scroll-proportion="-6.1363635">
+            <state line="10" column="35" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,12 +86,23 @@
       </file>
       <file leaf-file-name="spring-private.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/spring-private.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="62" selection-start="1576" selection-end="1576" vertical-scroll-proportion="-19.727272">
+              <folding />
+            </state>
+          </provider>
           <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
             <state />
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GtalkChannel.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/channel/GtalkChannel.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="76" selection-start="924" selection-end="924" vertical-scroll-proportion="-12.954545">
-              <folding />
+            <state line="50" column="82" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#50#86#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,16 +119,16 @@
       <file leaf-file-name="build.gradle" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CamServer/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="73" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0">
+            <state line="45" column="54" selection-start="1428" selection-end="1428" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CamHTTPSever.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CamHTTPSever.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/CamHTTPSever.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="70" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.4">
+            <state line="23" column="46" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,20 +157,40 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/CamServer/src/mx/angellore/cam/alarms/Main.java" />
-        <option value="$PROJECT_DIR$/CamServer/src/main/resources/spring-private.xml" />
-        <option value="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/Main.groovy" />
         <option value="$PROJECT_DIR$/CamServer/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/CamServer/build.gradle" />
         <option value="$PROJECT_DIR$/../jAlarms/jalarms-core/src/main/java/com/solab/alarms/channels/twitter/TwitterChannel.java" />
         <option value="$PROJECT_DIR$/CamServer/src/main/resources/spring-config.xml" />
+        <option value="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/Main.groovy" />
         <option value="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/CamHTTPSever.groovy" />
+        <option value="$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/channel/GtalkChannel.groovy" />
+        <option value="$PROJECT_DIR$/CamServer/src/main/resources/spring-private.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1440" />
-    <option name="height" value="823" />
+    <option name="width" value="2560" />
+    <option name="height" value="1354" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -194,12 +223,110 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamAlarm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="CamAlarm" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamAlarm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamAlarm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamAlarm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamAlarm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CamServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="groovy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="channel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -214,31 +341,25 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CamAlarm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="options.lastSelected" value="Errors" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -289,6 +410,7 @@
       <setting name="workDir" value="$PROJECT_DIR$" />
       <setting name="debug" value="false" />
       <method>
+        <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
         <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
@@ -303,6 +425,39 @@
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
@@ -390,30 +545,30 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="823" extended-state="0" />
+    <frame x="0" y="22" width="2560" height="1354" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3297414" sideWeight="0.67094016" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24928162" sideWeight="0.67094016" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24920382" sideWeight="0.67153287" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32846716" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -480,62 +635,72 @@
   <component name="editorHistoryManager">
     <entry file="jar://$USER_HOME$/bin/grails/lib/org.springframework/spring-context-support/jars/spring-context-support-3.1.0.RELEASE.jar!/org/springframework/mail/SimpleMailMessage.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="43" selection-start="1106" selection-end="1127" vertical-scroll-proportion="0.45382166">
+        <state line="29" column="43" selection-start="1106" selection-end="1127" vertical-scroll-proportion="0.45382166" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.jalarms/jalarms-core/1.6.1/source/47945c41a8a201068cd8503745f400786fddc753/jalarms-core-1.6.1-sources.jar!/com/solab/alarms/channels/twitter/TwitterChannel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="13" selection-start="2659" selection-end="2659" vertical-scroll-proportion="0.033690657" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="32" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.jalarms/jalarms-channels/1.6.1/jar/2b4b76f35138152d4bdaf1295e5467a88347a4ef/jalarms-channels-1.6.1.jar!/com/solab/alarms/channels/XmppChannel.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="13" selection-start="163" selection-end="163" vertical-scroll-proportion="0.077319585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/channel/GtalkChannel.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="82" selection-start="1641" selection-end="1641" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#50#86#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CamServer/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="54" selection-start="1428" selection-end="1428" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/spring-config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="35" selection-start="527" selection-end="527" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/spring-private.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="62" selection-start="1576" selection-end="1576" vertical-scroll-proportion="-19.727272">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/CamHTTPSever.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="46" selection-start="563" selection-end="563" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/Main.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="26" selection-start="458" selection-end="458" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="32" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CamServer/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="73" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/artifacts-13/filestore/net.sf.jalarms/jalarms-core/1.6.1/source/47945c41a8a201068cd8503745f400786fddc753/jalarms-core-1.6.1-sources.jar!/com/solab/alarms/channels/twitter/TwitterChannel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="13" selection-start="2659" selection-end="2659" vertical-scroll-proportion="0.033690657">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/spring-private.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="76" selection-start="924" selection-end="924" vertical-scroll-proportion="-12.954545">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CamServer/src/main/resources/spring-config.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="41" selection-start="491" selection-end="491" vertical-scroll-proportion="-6.1363635">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CamServer/src/main/groovy/mx/com/maleficarum/alarms/server/CamHTTPSever.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="70" selection-start="1122" selection-end="1122" vertical-scroll-proportion="0.4">
+        <state line="0" column="47" selection-start="8" selection-end="40" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -600,7 +765,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

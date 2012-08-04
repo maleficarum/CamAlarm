@@ -19,9 +19,11 @@ class CamHTTPSever implements GroovyInterceptable {
     def logger = LoggerFactory.getLogger(CamHTTPSever.class)
     def ctx
     def sender
+    def hostname
 
-    Object invokeMethod(String methodName, ApplicationContext args) {
-        ctx = args
+    Object invokeMethod(String methodName, Map args) {
+        ctx = args["context"]
+        hostname = args["hostname"]
         sender = ctx.getBean("alarmSender")
         server = new ServerSocket(port?.toInteger())
 
@@ -38,7 +40,7 @@ class CamHTTPSever implements GroovyInterceptable {
                                     if(buffer =~ /alarma/) {
                                         def a = buffer.split("=")[1].split("HTTP")[0]
                                         logger.info("Sending alarma ${a}")
-                                        sender.sendAlarm(a,"FATAL")
+                                        sender.sendAlarm("${hostname} : ${a}","FATAL")
                                     }
 
                                     output << "ok\n"
