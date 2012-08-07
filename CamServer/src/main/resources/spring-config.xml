@@ -39,6 +39,15 @@
     <bean id="httpSever" class="mx.com.maleficarum.alarms.server.CamHTTPSever">
         <property name="port"><value>9191</value></property>
     </bean>
+    
+    <bean id="pinger" class="mx.com.maleficarum.alarms.server.PingService">
+        <property name="alarmSender">
+            <ref local="alarmSender" />
+        </property>
+        <property name="interval">
+            <value>60</value>
+        </property>
+    </bean>
 
     <bean id="javaMailSenderTemplate" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com" />
