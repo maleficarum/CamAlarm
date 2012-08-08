@@ -3,6 +3,7 @@ package mx.com.maleficarum.alarms.server.tasks
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import org.slf4j.LoggerFactory
+import groovyx.net.http.HTTPBuilder
 
 /**
  * Makes a ping to any given source in jalarms config
