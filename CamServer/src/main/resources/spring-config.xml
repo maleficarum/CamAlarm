@@ -40,7 +40,7 @@
         <property name="port"><value>9191</value></property>
     </bean>
     
-    <bean id="pinger" class="mx.com.maleficarum.alarms.server.PingService">
+    <bean id="pinger" class="mx.com.maleficarum.alarms.server.tasks.PingService">
         <property name="alarmSender">
             <ref local="alarmSender" />
         </property>

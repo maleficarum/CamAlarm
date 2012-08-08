@@ -19,6 +19,8 @@ configurations {
 dependencies {
     def springVersion = "3.1.0"
     def groovyVersion = "2.0.1"
+    def jalarmsVersion = "1.6.1"
+    def memcachedVersion = "2.8.2"
     groovy "org.codehaus.groovy:groovy-all:${groovyVersion}"
 
 
@@ -27,9 +29,10 @@ dependencies {
             "org.springframework:spring-context:${springVersion}.RELEASE",
             "org.springframework:spring-context-support:${springVersion}.RELEASE",
             "org.springframework:spring-core:${springVersion}.RELEASE",
-            'spy:memcached:2.5',
-            'net.sf.jalarms:jalarms-groovy:1.6.1',
-            'net.sf.jalarms:jalarms-channels:1.6.1'
+            "spy:memcached:${memcachedVersion}",
+            "net.sf.jalarms:jalarms-groovy:${jalarmsVersion}",
+            "net.sf.jalarms:jalarms-channels:${jalarmsVersion}",
+            'org.codehaus.groovy.modules.http-builder:http-builder:0.5.2'
 }
 
 sourceSets {
@@ -56,4 +59,9 @@ task copyToLib(dependsOn: jar, type: Copy) {
 task(runSimple, dependsOn: 'classes', type: JavaExec) {
     main = 'mx.com.maleficarum.alarms.server.Main'
     classpath = sourceSets.main.runtimeClasspath
+}
+
+jar {
+    include '**/*.class'
+    exclude '**/*.xml'
 }

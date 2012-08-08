@@ -17,7 +17,11 @@ class Main {
         def interceptables = ctx.getBeansOfType(GroovyInterceptable.class)
 
         interceptables.each { k, v ->
-            v.invokeMethod(hostname, ["context":ctx, "hostname":hostname])
+            try {
+                v.invokeMethod(hostname, ["context":ctx, "hostname":hostname])
+            } catch(Exception e) {
+                ctx.getBean("alarmSender").sendAlarm("Sistema iniciado ${hostname}", "ERROR     AX")
+            }
         }
 
         ctx.getBean("alarmSender").sendAlarm("Sistema iniciado ${hostname}", "PING")
